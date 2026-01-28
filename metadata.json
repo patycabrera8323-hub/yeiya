@@ -1,0 +1,8 @@
+{
+  "name": "yeiya refinar bot y ajuste penultimos",
+  "description": "A luxury cinematic web experience with Apple-style AR section choreography and live camera HUD.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

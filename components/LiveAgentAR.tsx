@@ -65,7 +65,8 @@ export const LiveAgentAR: React.FC<LiveAgentARProps> = ({ onClose }) => {
 
     try {
       // Intentar obtener de metadatada env o process env
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY || (process as any).env?.GEMINI_API_KEY;
+      const rawKey = import.meta.env.VITE_GEMINI_API_KEY || (process as any).env?.GEMINI_API_KEY;
+      const apiKey = rawKey?.trim();
 
       if (!apiKey || apiKey === 'tu_api_key_aqui' || apiKey === 'undefined') {
         const errorMsg = 'API Key no configurada. Por favor revisa tu archivo .env';
@@ -101,7 +102,7 @@ export const LiveAgentAR: React.FC<LiveAgentARProps> = ({ onClose }) => {
       userAnalyserRef.current = userAnalyser;
 
       const sessionPromise = ai.live.connect({
-        model: 'gemini-2.0-flash-exp',
+        model: 'gemini-2.0-flash',
         config: {
           // El aviso de depreciación pide poner los campos directamente en config
           responseModalities: [Modality.AUDIO],

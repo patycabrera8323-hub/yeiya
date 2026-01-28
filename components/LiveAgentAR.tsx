@@ -102,7 +102,7 @@ export const LiveAgentAR: React.FC<LiveAgentARProps> = ({ onClose }) => {
       userAnalyserRef.current = userAnalyser;
 
       const sessionPromise = ai.live.connect({
-        model: 'gemini-2.0-flash-exp',
+        model: 'gemini-2.0-flash',
         config: {
           // El aviso de depreciación pide poner los campos directamente en config
           responseModalities: [Modality.AUDIO],

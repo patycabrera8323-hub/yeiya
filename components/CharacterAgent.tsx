@@ -12,7 +12,7 @@ interface CharacterAgentProps {
 const Character: React.FC<CharacterAgentProps> = ({ isSpeaking, volume }) => {
     // Using a generic Ready Player Me avatar URL for the prototype
     // This is a placeholder; in production, you'd use your own model link
-    const avatarUrl = 'https://models.readyplayer.me/6460de4c35f02c0daddcdec9.glb';
+    const avatarUrl = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/BoomBox/glTF-Binary/BoomBox.glb';
     const { scene, animations } = useGLTF(avatarUrl);
     const group = useRef<THREE.Group>(null);
     const { actions } = useAnimations(animations, group);
@@ -79,4 +79,4 @@ export const CharacterAgent: React.FC<CharacterAgentProps> = (props) => {
 };
 
 // Preload the model
-useGLTF.preload('https://models.readyplayer.me/6460de4c35f02c0daddcdec9.glb');
+useGLTF.preload('https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/BoomBox/glTF-Binary/BoomBox.glb');
